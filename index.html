@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
             color: var(--tg-theme-text-color);
             margin: 48px 24px;
             padding: 0;
-            color-scheme: var(--tg-color-scheme);
+            /* color-scheme: var(--tg-color-scheme); */
         }
 
         a {
@@ -137,23 +137,23 @@
             });
         }
 
-        // function setViewportData() {
-        //     var sizeEl = document.getElementById('viewport-params-size');
-        //     sizeEl.innerText = 'width: ' + window.innerWidth + ' x ' + 
-        //         'height: ' + Telegram.WebApp.viewportStableHeight;
+        function setViewportData() {
+            var sizeEl = document.getElementById('viewport-params-size');
+            sizeEl.innerText = 'width: ' + window.innerWidth + ' x ' + 
+                'height: ' + Telegram.WebApp.viewportStableHeight;
 
-        //     var expandEl = document.querySelector('#viewport-params-expand');
-        //     expandEl.innerText = 'Is Expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false');
-        // }
+            var expandEl = document.querySelector('#viewport-params-expand');
+            expandEl.innerText = 'Is Expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false');
+        }
 
-        // Telegram.WebApp.setHeaderColor('secondary_bg_color');
+        Telegram.WebApp.setHeaderColor('secondary_bg_color');
 
-        // setViewportData();
-        // Telegram.WebApp.onEvent('viewportChanged', setViewportData);
+        setViewportData();
+        Telegram.WebApp.onEvent('viewportChanged', setViewportData);
 
-        // Telegram.WebApp.onEvent('themeChanged', function() {
-        //     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-        // });
+        Telegram.WebApp.onEvent('themeChanged', function() {
+            document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+        });
         
     </script>
 
