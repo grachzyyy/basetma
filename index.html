@@ -104,7 +104,7 @@
         // Show main button
         Telegram.WebApp.MainButton.setParams({
             text: 'Main Button',
-            color: '#0088cc', // задаем цвет кнопки
+            color: 'var(--tg-theme-bg-color)', // задаем цвет кнопки
             text_color: '#FFFFFF' // задаем цвет текста кнопки
         });
         Telegram.WebApp.MainButton.onClick(function () {
@@ -136,6 +136,25 @@
                 }
             });
         }
+
+        function setViewportData() {
+            var sizeEl = document.getElementById('viewport-params-size');
+            sizeEl.innerText = 'width: ' + window.innerWidth + ' x ' + 
+                'height: ' + Telegram.WebApp.viewportStableHeight;
+
+            var expandEl = document.querySelector('#viewport-params-expand');
+            expandEl.innerText = 'Is Expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false');
+        }
+
+        Telegram.WebApp.setHeaderColor('secondary_bg_color');
+
+        setViewportData();
+        Telegram.WebApp.onEvent('viewportChanged', setViewportData);
+
+        Telegram.WebApp.onEvent('themeChanged', function() {
+            document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
+        });
+        
     </script>
 
     <!-- Eruda is console for mobile browsers -->
