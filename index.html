@@ -108,6 +108,7 @@
             text_color: '#FFFFFF' // задаем цвет текста кнопки
         });
         Telegram.WebApp.MainButton.onClick(function () {
+            Telegram.WebApp.prompt('Сколько тебе лет?', 100);
             Telegram.WebApp.showAlert('Main Button was clicked');
         });	
         Telegram.WebApp.MainButton.show();
