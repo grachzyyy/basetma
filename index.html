@@ -8,27 +8,36 @@
 </head>
 <body>
     <script>
-        // Инициализация WebApp API
-        Telegram.WebApp.ready();
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("Web App is loading...");
 
-        // Показать основную кнопку
-        Telegram.WebApp.MainButton.show();
-        Telegram.WebApp.MainButton.setText("Click Me");
+            // Убедитесь, что Web App API готово к использованию
+            Telegram.WebApp.ready();
+            console.log("Web App is ready:", Telegram.WebApp);
 
-        // Добавить обработчик клика
-        Telegram.WebApp.MainButton.onClick(function () {
-            // Показать индикатор загрузки
-            Telegram.WebApp.showProgress();
+            // Показать основную кнопку
+            Telegram.WebApp.MainButton.setText("Click Me").show();
+            console.log("Main Button is shown");
 
-            // Выполнить какие-то действия (например, запрос к серверу)
-            // Для примера, используем setTimeout чтобы симулировать задержку
-            setTimeout(function () {
-                // Скрыть индикатор загрузки
-                Telegram.WebApp.hideProgress();
-                
-                // Показать сообщение об успешном завершении операции
-                Telegram.WebApp.showAlert('Main Button was clicked');
-            }, 2000); // Задержка 2 секунды для демонстрации
+            // Добавить обработчик клика
+            Telegram.WebApp.MainButton.onClick(function () {
+                console.log("Main Button clicked");
+
+                // Показать индикатор загрузки
+                Telegram.WebApp.showProgress();
+                console.log("Progress shown");
+
+                // Выполнить какие-то действия (например, запрос к серверу)
+                // Для примера, используем setTimeout чтобы симулировать задержку
+                setTimeout(function () {
+                    // Скрыть индикатор загрузки
+                    Telegram.WebApp.hideProgress();
+                    console.log("Progress hidden");
+                    
+                    // Показать сообщение об успешном завершении операции
+                    Telegram.WebApp.showAlert('Main Button was clicked');
+                }, 2000); // Задержка 2 секунды для демонстрации
+            });
         });
     </script>
 </body>
