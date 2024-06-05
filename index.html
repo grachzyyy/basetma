@@ -111,6 +111,22 @@
             Telegram.WebApp.showAlert('Main Button was clicked');
         });	
         Telegram.WebApp.MainButton.show();
+        
+        function activcheck(){
+            if(Telegram.WebApp.MainButton.isActive){
+                Telegram.WebApp.MainButton.setParams({
+            color: '#8d32a8',
+            text_color: '#FFFFFF' // задаем цвет текста кнопки
+        });
+            }
+            else{
+                Telegram.WebApp.MainButton.setParams({
+            text: 'Main Button',
+            // color: '#2A9FD6',
+            text_color: '#FFFFFF' // задаем цвет текста кнопки
+        });
+            }
+        }
 
         // Function to toggle main TWA button
         function toggleMainButton() {
