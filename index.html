@@ -107,10 +107,22 @@
             // color: '#2A9FD6',
             text_color: '#FFFFFF' // задаем цвет текста кнопки
         });
-        Telegram.WebApp.MainButton.onClick(function () {
+        
+        
+        // Обрабатываем клик по главной кнопке
+        Telegram.WebApp.MainButton.onClick(function() {
+            // Показываем индикатор прогресса
             Telegram.WebApp.showProgress();
-            Telegram.WebApp.showAlert('Main Button was clicked');
-        });	
+
+            // Выполняем нужные действия, например, отправку запроса или другую логику
+            setTimeout(function() {
+                // Убираем индикатор прогресса
+                Telegram.WebApp.hideProgress();
+
+                // Показываем уведомление о клике по кнопке
+                Telegram.WebApp.showAlert('Main Button was clicked');
+            }, 2000); // Задержка 2 секунды для имитации выполнения задачи
+        });
         Telegram.WebApp.MainButton.show();
 
         // Function to toggle main TWA button
