@@ -30,7 +30,7 @@
   <button onclick="DemoApp.toggleBackButton(this);">Show Back Button</button>
   <button onclick="DemoApp.toggleSettingsButton(this);">Show Settings Button</button>
   <button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
-  <button><a class="Obutton" href="javascript:;" onclick="return DemoApp.biometricRequestAuth(this);">Otpechatok</a></button>
+  <button href="javascript:;" onclick="return DemoApp.biometricRequestAuth(this);">Otpechatok</button>
   <input type="text" placeholder="Input text in regular input...">
   <div class="input" contenteditable="true" data-placeholder="Input text in contenteditable field..."></div>
     <div id="peer_wrap" style="display:none">
@@ -278,11 +278,6 @@ try {
 } catch(e) {}
 
 </script>
-<style>
-  a .Obutton {
-    color: aliceblue;
-  }
-</style>  
 </body>
   
 </html>
