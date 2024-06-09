@@ -329,6 +329,7 @@ var DemoApp = {
         $(el).next('span').text('(Success, token: ' + token + ')').attr('class', 'ok');
       } else {
         $(el).next('span').text('(Auth failed)').attr('class', 'err');
+        Telegram.WebApp.showAlert('Отпечаток пальца не совпадает')
       }
     });
   },
