@@ -27,9 +27,9 @@ var DemoApp = {
   expand: function() {
     Telegram.WebApp.expand();
   },
-  //close: function() {
-   // Telegram.WebApp.close();
-  //},
+  close: function() {
+  Telegram.WebApp.close();
+  ,
   sendMessage: function(msg_id, with_webview) {
     if (!DemoApp.initDataUnsafe.query_id) {
       alert('WebViewQueryId not defined');
@@ -58,33 +58,33 @@ var DemoApp = {
       }
     });
   },
-  changeMenuButton: function(close) {
-    $('button').prop('disabled', true);
-    $('#btn_status').text('Changing button...').removeClass('ok err').show();
-    DemoApp.apiRequest('changeMenuButton', {}, function(result) {
-      $('button').prop('disabled', false);
-      if (result.response) {
-        if (result.response.ok) {
-          $('#btn_status').text('Button changed!').addClass('ok').show();
-          Telegram.WebApp.close();
-        } else {
-          $('#btn_status').text(result.response.description).addClass('err').show();
-          alert(result.response.description);
-        }
-      } else if (result.error) {
-        $('#btn_status').text(result.error).addClass('err').show();
-        alert(result.error);
-      } else {
-        $('#btn_status').text('Unknown error').addClass('err').show();
-        alert('Unknown error');
-      }
-    });
-    if (close) {
-      setTimeout(function() {
-        Telegram.WebApp.close();
-      }, 50);
-    }
-  },
+  // changeMenuButton: function(close) {
+  //   $('button').prop('disabled', true);
+  //   $('#btn_status').text('Changing button...').removeClass('ok err').show();
+  //   DemoApp.apiRequest('changeMenuButton', {}, function(result) {
+  //     $('button').prop('disabled', false);
+  //     if (result.response) {
+  //       if (result.response.ok) {
+  //         $('#btn_status').text('Button changed!').addClass('ok').show();
+  //         Telegram.WebApp.close();
+  //       } else {
+  //         $('#btn_status').text(result.response.description).addClass('err').show();
+  //         alert(result.response.description);
+  //       }
+  //     } else if (result.error) {
+  //       $('#btn_status').text(result.error).addClass('err').show();
+  //       alert(result.error);
+  //     } else {
+  //       $('#btn_status').text('Unknown error').addClass('err').show();
+  //       alert('Unknown error');
+  //     }
+  //   });
+  //   if (close) {
+  //     setTimeout(function() {
+  //       Telegram.WebApp.close();
+  //     }, 50);
+  //   }
+  // },
   checkInitData: function() {
     if (DemoApp.initDataUnsafe.query_id &&
         DemoApp.initData &&
