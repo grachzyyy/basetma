@@ -19,6 +19,11 @@ var DemoApp = {
       DemoApp.showAlert('Settings opened!');
     });
   },
+
+  zakrit: function(){
+    Telegram.WebApp.close();
+  },
+  
   expand: function() {
     Telegram.WebApp.expand();
   },
