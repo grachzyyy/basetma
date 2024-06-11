@@ -20,7 +20,7 @@ var DemoApp = {
     });
   },
 
-  zakrit: function(){
+  closew: function() {
     Telegram.WebApp.close();
   },
   
