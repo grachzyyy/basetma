@@ -27,7 +27,7 @@ var DemoApp = {
   expand: function() {
     Telegram.WebApp.expand();
   },
-  close: function() {
+  //close: function() {
     Telegram.WebApp.close();
   },
   sendMessage: function(msg_id, with_webview) {
