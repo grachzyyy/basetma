@@ -28,8 +28,8 @@ var DemoApp = {
     Telegram.WebApp.expand();
   },
   close: function() {
-  Telegram.WebApp.close();
-  ,
+    Telegram.WebApp.close();
+  },
   sendMessage: function(msg_id, with_webview) {
     if (!DemoApp.initDataUnsafe.query_id) {
       alert('WebViewQueryId not defined');
